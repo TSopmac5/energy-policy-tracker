@@ -1,7 +1,25 @@
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import ActivityCard from "../components/ActivityCard";
 
 export default function Home() {
+  const recentActivity = [
+  {
+    agency: "DOE",
+    title: "Clean energy funding opportunity placeholder",
+    category: "Federal",
+  },
+  {
+    agency: "FERC",
+    title: "Transmission planning rule placeholder",
+    category: "Federal",
+  },
+  {
+    agency: "CPUC",
+    title: "Utility rate case hearing placeholder",
+    category: "State",
+  },
+];
   return (
     <main className="min-h-screen bg-black text-white">
       <Navbar />
@@ -94,14 +112,17 @@ export default function Home() {
 </section>
 
 <section className="px-8 pb-20">
-  <h2 className="mb-6 text-3xl font-bold">
-    Recent Activity
-  </h2>
+  <h2 className="mb-6 text-3xl font-bold">Recent Activity</h2>
 
-  <div className="rounded-lg border border-zinc-800 p-6">
-    <p className="text-zinc-400">
-      No policy updates available yet.
-    </p>
+  <div className="space-y-4">
+    {recentActivity.map((item) => (
+      <ActivityCard
+  key={item.title}
+  agency={item.agency}
+  title={item.title}
+  category={item.category}
+/>
+    ))}
   </div>
 </section>
       
