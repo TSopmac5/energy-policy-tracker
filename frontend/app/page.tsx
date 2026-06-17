@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -41,6 +42,54 @@ export default function Home() {
       <h3 className="text-zinc-400">Projects</h3>
       <p className="mt-3 text-4xl font-bold">0</p>
     </div>
+  </div>
+</section>
+
+<section className="px-8 pb-20">
+  <h2 className="mb-6 text-3xl font-bold">
+    Explore Governance Layers
+  </h2>
+
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <Link
+      href="/federal"
+      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
+    >
+      <h3 className="text-xl font-bold">Federal Policy</h3>
+      <p className="mt-3 text-zinc-400">
+        Track DOE, FERC, EPA, NRC, EIA, national rules, grants, and federal energy decisions.
+      </p>
+    </Link>
+
+    <Link
+      href="/states"
+      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
+    >
+      <h3 className="text-xl font-bold">State Policy</h3>
+      <p className="mt-3 text-zinc-400">
+        Monitor public utility commissions, state energy offices, legislation, and rate cases.
+      </p>
+    </Link>
+
+    <Link
+      href="/utilities"
+      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
+    >
+      <h3 className="text-xl font-bold">Utilities</h3>
+      <p className="mt-3 text-zinc-400">
+        Follow utility filings, IRPs, grid plans, outage reports, and infrastructure proposals.
+      </p>
+    </Link>
+
+    <Link
+      href="/projects"
+      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
+    >
+      <h3 className="text-xl font-bold">Projects</h3>
+      <p className="mt-3 text-zinc-400">
+        Track nuclear, solar, wind, battery, transmission, gas, hydrogen, and microgrid projects.
+      </p>
+    </Link>
   </div>
 </section>
 
