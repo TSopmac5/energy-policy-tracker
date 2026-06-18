@@ -1,9 +1,7 @@
-import Navbar from "../../components/Navbar";
 
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <Navbar />
       <section className="px-8 py-20">
         <p className="mb-4 text-sm uppercase tracking-widest text-zinc-400">
           Energy Projects

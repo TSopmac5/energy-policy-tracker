@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 import ActivityCard from "../components/ActivityCard";
+import DashboardCard from "../components/DashboardCard";
 
 export default function Home() {
   const recentActivity = [
@@ -22,7 +22,6 @@ export default function Home() {
 ];
   return (
     <main className="min-h-screen bg-black text-white">
-      <Navbar />
       <section className="px-8 py-20">
   <p className="mb-4 text-sm uppercase tracking-widest text-zinc-400">
     U.S. Energy Governance Intelligence
@@ -69,47 +68,31 @@ export default function Home() {
   </h2>
 
   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-    <Link
+    <DashboardCard
+      title="Federal Policy"
+      description="Track DOE, FERC, EPA, NRC, EIA, national rules, grants, and federal energy decisions."
       href="/federal"
-      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
-    >
-      <h3 className="text-xl font-bold">Federal Policy</h3>
-      <p className="mt-3 text-zinc-400">
-        Track DOE, FERC, EPA, NRC, EIA, national rules, grants, and federal energy decisions.
-      </p>
-    </Link>
+    />
 
-    <Link
+    <DashboardCard
+      title="State Policy"
+      description="Monitor public utility commissions, state energy offices, legislation, and rate cases."
       href="/states"
-      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
-    >
-      <h3 className="text-xl font-bold">State Policy</h3>
-      <p className="mt-3 text-zinc-400">
-        Monitor public utility commissions, state energy offices, legislation, and rate cases.
-      </p>
-    </Link>
+    />
 
-    <Link
+    <DashboardCard
+      title="Utilities"
+      description="Follow utility filings, IRPs, grid plans, outage reports, and infrastructure proposals."
       href="/utilities"
-      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
-    >
-      <h3 className="text-xl font-bold">Utilities</h3>
-      <p className="mt-3 text-zinc-400">
-        Follow utility filings, IRPs, grid plans, outage reports, and infrastructure proposals.
-      </p>
-    </Link>
+    />
 
-    <Link
+    <DashboardCard
+      title="Projects"
+      description="Track nuclear, solar, wind, battery, transmission, gas, hydrogen, and microgrid projects."
       href="/projects"
-      className="rounded-lg border border-zinc-800 p-6 transition hover:border-zinc-500"
-    >
-      <h3 className="text-xl font-bold">Projects</h3>
-      <p className="mt-3 text-zinc-400">
-        Track nuclear, solar, wind, battery, transmission, gas, hydrogen, and microgrid projects.
-      </p>
-    </Link>
+    />
   </div>
-</section>
+  </section>
 
 <section className="px-8 pb-20">
   <h2 className="mb-6 text-3xl font-bold">Recent Activity</h2>
