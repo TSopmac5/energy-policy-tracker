@@ -1,25 +1,19 @@
-import Link from "next/link";
 import ActivityCard from "../components/ActivityCard";
 import DashboardCard from "../components/DashboardCard";
 
-export default function Home() {
-  const recentActivity = [
-  {
-    agency: "DOE",
-    title: "Clean energy funding opportunity placeholder",
-    category: "Federal",
-  },
-  {
-    agency: "FERC",
-    title: "Transmission planning rule placeholder",
-    category: "Federal",
-  },
-  {
-    agency: "CPUC",
-    title: "Utility rate case hearing placeholder",
-    category: "State",
-  },
-];
+type Activity = {
+  agency: string;
+  title: string;
+  category: string;
+};
+
+export default async function Home() {
+  const response = await fetch("http://127.0.0.1:8000/activity", {
+    cache: "no-store",
+  });
+
+  const recentActivity: Activity[] = await response.json();
+
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="px-8 py-20">

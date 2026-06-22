@@ -1,0 +1,27 @@
+[
+  {
+    "agency": "DOE",
+    "title": "Grid Resilience Grant Program Announced",
+    "category": "Federal"
+  },
+  {
+    "agency": "FERC",
+    "title": "Transmission Planning Rule Under Review",
+    "category": "Federal"
+  },
+  {
+    "agency": "CPUC",
+    "title": "California Utility Rate Case Hearing Scheduled",
+    "category": "State"
+  },
+  {
+    "agency": "ERCOT",
+    "title": "Texas Grid Reliability Assessment Released",
+    "category": "Regional"
+  },
+  {
+    "agency": "PG&E",
+    "title": "Wildfire Mitigation Plan Updated",
+    "category": "Utility"
+  }
+]
