@@ -1,6 +1,8 @@
 from fastapi import FastAPI  # type: ignore[import]
 from fastapi.middleware.cors import CORSMiddleware  # type: ignore[import]
 import json
+import sqlite3
+from database import get_connection
 
 app = FastAPI()
 
@@ -22,5 +24,12 @@ def health_check():
 
 @app.get("/activity")
 def get_activity():
-    with open("data/activity.json", "r") as file:
-        return json.load(file)
+    connection = get_connection()
+
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM activity ORDER BY id DESC")
+
+    rows = cursor.fetchall()
+    connection.close()
+
+    return [dict(row) for row in rows]
