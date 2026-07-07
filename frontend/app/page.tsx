@@ -2,9 +2,13 @@ import ActivityCard from "../components/ActivityCard";
 import DashboardCard from "../components/DashboardCard";
 
 type Activity = {
+  id: number;
   agency: string;
   title: string;
   category: string;
+  date: string;
+  source_url: string;
+  summary: string;
 };
 
 export default async function Home() {
@@ -94,7 +98,7 @@ export default async function Home() {
   <div className="space-y-4">
     {recentActivity.map((item) => (
       <ActivityCard
-  key={item.title}
+  key={item.id}
   agency={item.agency}
   title={item.title}
   category={item.category}
