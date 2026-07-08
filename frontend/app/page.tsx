@@ -18,6 +18,12 @@ export default async function Home() {
 
   const recentActivity: Activity[] = await response.json();
 
+  const statsResponse = await fetch("http://127.0.0.1:8000/stats", {
+  cache: "no-store",
+});
+
+const stats = await statsResponse.json();
+
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="px-8 py-20">
@@ -40,22 +46,22 @@ export default async function Home() {
   <div className="grid grid-cols-4 gap-6">
     <div className="rounded-lg border border-zinc-800 p-6">
       <h3 className="text-zinc-400">Federal Policies</h3>
-      <p className="mt-3 text-4xl font-bold">0</p>
+      <p className="mt-3 text-4xl font-bold">{stats.federal_policies}</p>
     </div>
 
     <div className="rounded-lg border border-zinc-800 p-6">
       <h3 className="text-zinc-400">States Tracked</h3>
-      <p className="mt-3 text-4xl font-bold">50</p>
+      <p className="mt-3 text-4xl font-bold">{stats.state_policies}</p>
     </div>
 
     <div className="rounded-lg border border-zinc-800 p-6">
       <h3 className="text-zinc-400">Utilities</h3>
-      <p className="mt-3 text-4xl font-bold">0</p>
+      <p className="mt-3 text-4xl font-bold">{stats.utilities}</p>
     </div>
 
     <div className="rounded-lg border border-zinc-800 p-6">
       <h3 className="text-zinc-400">Projects</h3>
-      <p className="mt-3 text-4xl font-bold">0</p>
+      <p className="mt-3 text-4xl font-bold">{stats.projects}</p>
     </div>
   </div>
 </section>

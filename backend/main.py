@@ -1,6 +1,8 @@
 from fastapi import FastAPI  # type: ignore[import]
 from fastapi.middleware.cors import CORSMiddleware  # type: ignore[import]
+
 from api.activity import router as activity_router
+from api.stats import router as stats_router
 
 app = FastAPI()
 
@@ -13,7 +15,7 @@ app.add_middleware(
 )
 
 app.include_router(activity_router)
-
+app.include_router(stats_router)
 
 @app.get("/")
 def root():
