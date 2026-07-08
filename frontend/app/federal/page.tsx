@@ -1,5 +1,11 @@
+import ActivityCard from "../../components/ActivityCard";
 
-export default function FederalPage() {
+export default async function FederalPage() {
+  const response = await fetch("http://127.0.0.1:8000/federal/activity", {
+  cache: "no-store",
+});
+
+const federalActivity = await response.json();
   return (
     <main className="min-h-screen bg-black text-white">
 
@@ -18,6 +24,20 @@ export default function FederalPage() {
           federal energy data releases.
         </p>
       </section>
+      <section className="px-8 pb-20">
+   <h2 className="mb-6 text-3xl font-bold">Federal Activity</h2>
+
+  <div className="space-y-4">
+    {federalActivity.map((item: any) => (
+      <ActivityCard
+        key={item.id}
+        agency={item.agency}
+        title={item.title}
+        category={item.category}
+      />
+    ))}
+  </div>
+</section>
     </main>
   );
 }
